@@ -5,12 +5,12 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
-# ✅ Print to check if key is loaded (for debugging)
+#Print to check if key is loaded (for debugging)
 api_key = os.getenv("OPENAI_API_KEY")
 if not api_key:
     raise ValueError("OPENAI_API_KEY not found. Check your .env file location and format.")
 
-# ✅ Initialize the OpenAI client
+#Initialize the OpenAI client
 client = OpenAI(api_key=api_key)
 
 def generate_code(prompt, language="python"):
