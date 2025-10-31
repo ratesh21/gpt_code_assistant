@@ -14,7 +14,8 @@ def generate_code(prompt, language="python"):
     full_prompt = f"Write a {language} program for the following task:\n{prompt}"
     try:
         response = client.chat.completions.create(
-            model="llama3-70b-8192",
+            #Updated model (recommended)
+            model="llama-3.1-8b-instant",
             messages=[
                 {"role": "system", "content": "You are an expert software engineer."},
                 {"role": "user", "content": full_prompt}
@@ -26,7 +27,7 @@ def generate_code(prompt, language="python"):
         return f"Error: {e}"
 
 def main():
-    print("LLaMA 3 Code Assistant (Groq API)")
+    print(" LLaMA 3.1 Code Assistant (Groq API)")
     print("Type 'exit' to quit.\n")
 
     while True:
